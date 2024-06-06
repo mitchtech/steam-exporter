@@ -53,6 +53,10 @@ jobs:
           images: |
             mitchtech/steam-exporter
             ghcr.io/${{ github.repository }}
+          tags: |
+            latest
+            type=semver,pattern={{major}}
+            type=semver,pattern={{major}}.{{minor}}
 
       - name: Build and push Docker images
         id: push
